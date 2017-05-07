@@ -1,5 +1,5 @@
 #!/bin/bash
-# Wordpress installation Script
+# Wordpress installation Script.
 echo -e "Please enter DATABASE: "
 read db
 echo -e "Please enter USER Database: "

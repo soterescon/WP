@@ -69,3 +69,5 @@ echo "Username: $admin"
 echo "Password: $wordpass"
 echo ""
 echo "================================================================="
+
+fi

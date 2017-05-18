@@ -1,5 +1,11 @@
 #!/bin/bash
 # Wordpress installation Script.
+
+echo "================================================================="
+echo "Quick Wordpress Installer"
+echo "================================================================="
+
+
 echo -e "Please enter DATABASE: "
 read db
 echo -e "Please enter USER Database: "
@@ -17,6 +23,14 @@ read wordpass
 echo -e "Please enter website's tagline: "
 read tagline
 
+# add a simple yes/no confirmation before we proceed
+echo "Run Install? (y/n)"
+read -e run
+
+# if the user didn't say no, then go ahead an install
+if [ "$run" == n ] ; then
+exit
+else
 
 #Downloads Wordpress
 wp core download
@@ -47,3 +61,11 @@ wp option set default_comment_status closed
 
 # Set permalinks as postname
 wp rewrite structure '/%postname%/' --hard
+
+echo "================================================================="
+echo "Installation is complete. Your username/password is listed below."
+echo ""
+echo "Username: $admin"
+echo "Password: $wordpass"
+echo ""
+echo "================================================================="
